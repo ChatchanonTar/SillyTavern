@@ -26,6 +26,7 @@ import {
     setWorldInfoSettings,
     deleteWorldInfo,
     world_info_recursive,
+    world_info_case_sensitive,
 } from "./scripts/world-info.js";
 
 import {
@@ -2032,7 +2033,7 @@ async function Generate(type, { automatic_trigger, force_name2, resolve, reject,
         let mesSend = [];
         console.log('calling runGenerate');
         streamingProcessor = isStreamingEnabled() ? new StreamingProcessor(type, force_name2) : false;
-        await runGenerate();
+        runGenerate();
 
         async function runGenerate(cycleGenerationPromt = '') {
             is_send_press = true;
